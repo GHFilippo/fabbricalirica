@@ -5,7 +5,9 @@
       "name": "PHP: avvia server integrato e debug (Xdebug)",
       "type": "php",
       "request": "launch",
+      "runtimeExecutable": "d:\\php\\php.exe",
       "runtimeArgs": ["-S", "localhost:8000", "-t", "${workspaceFolder}"],
+      "cwd": "${workspaceFolder}",
       "port": 9003,
       "serverReadyAction": {
         "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
@@ -17,6 +19,7 @@
       "name": "PHP: ascolta per Xdebug",
       "type": "php",
       "request": "launch",
+      "runtimeExecutable": "d:\\php\\php.exe",
       "port": 9003
     },
     {
