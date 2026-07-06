@@ -1,0 +1,36 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "PHP: avvia server integrato e debug (Xdebug)",
+      "type": "php",
+      "request": "launch",
+      "runtimeArgs": ["-S", "localhost:8000", "-t", "${workspaceFolder}"],
+      "port": 9003,
+      "serverReadyAction": {
+        "pattern": "Development Server \\(http://localhost:([0-9]+)\\) started",
+        "uriFormat": "http://localhost:%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "name": "PHP: ascolta per Xdebug",
+      "type": "php",
+      "request": "launch",
+      "port": 9003
+    },
+    {
+      "name": "Chrome: debug lato client",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8000",
+      "webRoot": "${workspaceFolder}"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full stack: PHP + Chrome",
+      "configurations": ["PHP: avvia server integrato e debug (Xdebug)", "Chrome: debug lato client"]
+    }
+  ]
+}
